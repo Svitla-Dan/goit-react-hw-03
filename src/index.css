@@ -5,8 +5,10 @@
   font-size: 16px;
 
   color: #0a0a0a;
-  background-color: #fafafa;
-
+  background-image: url("/night-sky-min.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -14,8 +16,10 @@
 }
 
 body {
-  margin: 0;
-  min-width: 320px;
+  body {
+    margin: 0;
+    min-height: 100vh;
+  }
 }
 
 h1,
@@ -84,7 +88,7 @@ input {
 
 input:hover,
 input:focus {
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 5px 10px 0px rgba(10, 61, 202, 0.9);
 }
 
 #root {
