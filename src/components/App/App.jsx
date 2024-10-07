@@ -46,22 +46,23 @@ const App = () => {
 
   <SearchBox searchTerm={filter} onChangeSearch={handleFilterChange} />;
 
-  const getFilteredContacts = () => {
-    const normalizedFilter = filter.toLowerCase();
-    return contacts.filter((contact) =>
-      contact.name.toLowerCase().includes(normalizedFilter)
-    );
-  };
+  const getFilteredContacts = contacts.filter((contact) =>
+    contact.name.toLowerCase().includes(filter.toLowerCase())
+  );
 
   return (
     <div className={style.container}>
       <h1>Phonebook</h1>
       <ContactForm onSubmit={addContact} />
       <SearchBox searchTerm={filter} onChangeSearch={handleFilterChange} />
-      <ContactList
-        contacts={getFilteredContacts()}
-        onDeleteContact={deleteContact}
-      />
+      {getFilteredContacts.length === 0 ? (
+        <p className={style.noContacts}>No contacts</p>
+      ) : (
+        <ContactList
+          contacts={getFilteredContacts}
+          onDeleteContact={deleteContact}
+        />
+      )}
     </div>
   );
 };

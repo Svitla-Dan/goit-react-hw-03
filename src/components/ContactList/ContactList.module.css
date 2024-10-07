@@ -10,7 +10,7 @@
   transition: transform 0.2s ease;
 }
 
-.contactItem:hover {
+.contactItem:hover .contactItem:focus {
   transform: scale(1.02);
 }
 
